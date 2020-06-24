@@ -366,7 +366,7 @@ sys.haptic.runin=13
 sys.haptic.intensityforkeyboard=true
 
 # Incremental
-ro.incremental.enable=yes
+ro.incremental.enable=true
 
 # Media
 debug.c2.use_dmabufheaps=1
