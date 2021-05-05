@@ -104,8 +104,9 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     disable_dma32=on \
-    swinfo.fingerprint=$(EVO_VERSION) \
-    mtdoops.fingerprint=$(EVO_VERSION)
+    kpti=off \
+    swinfo.fingerprint=$(AOSP_VERSION) \
+    mtdoops.fingerprint=$(AOSP_VERSION)
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
