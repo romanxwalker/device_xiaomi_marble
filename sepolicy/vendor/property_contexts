@@ -5,6 +5,7 @@ ro.vendor.aware_available                       u:object_r:vendor_aware_availabl
 vendor.camera.                                        u:object_r:vendor_camera_prop:s0
 persist.camera.                                       u:object_r:vendor_camera_prop:s0
 ro.boot.camera.                                       u:object_r:vendor_camera_prop:s0
+persist.vendor.aiie_capture_log.debug                 u:object_r:vendor_camera_prop:s0
 
 # DDR
 vendor.ddr_training.is.start                          u:object_r:vendor_ddr_prop:s0
@@ -108,6 +109,11 @@ vendor.dolbyv.                                        u:object_r:vendor_dolbyv_p
 
 # Fastcharge HAL
 persist.vendor.sec.fastchg_enabled              u:object_r:vendor_fastcharge_prop:s0
+
+# Fs-verity
+pm.dexopt.dm.require_fsverity   		              u:object_r:exported_pm_prop:s0
+pm.dexopt.dm.require_manifest   		              u:object_r:exported_pm_prop:s0
+
 
 # Fingerprint
 persist.vendor.sys.fp.                                u:object_r:vendor_fp_prop:s0

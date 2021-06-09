@@ -82,7 +82,6 @@ echo 325 > /proc/sys/walt/walt_low_latency_task_threshold
 
 # cpuset parameters
 echo 0-1 > /dev/cpuset/background/cpus
-echo 0-3 > /dev/cpuset/restricted/cpus
 echo 0-3 > /dev/cpuset/system-background/cpus
 echo 0-6 > /dev/cpuset/foreground/cpus
 
@@ -205,7 +204,7 @@ else
 	echo N > /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled
 fi
 
-echo s2idle > /sys/power/mem_sleep
+echo deep > /sys/power/mem_sleep
 
 # Let kernel know our image version/variant/crm_version
 if [ -f /sys/devices/soc0/select_image ]; then
