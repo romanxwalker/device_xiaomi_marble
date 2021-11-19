@@ -372,6 +372,7 @@ media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.mediaserver.64b.enable=true
 debug.stagefright.ccodec=4
 vendor.media.omx=0
+persist.mm.enable.prefetch=true
 vendor.mm.enable.qcom_parser=16777215
 
 # Misc
