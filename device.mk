@@ -189,7 +189,8 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-    libsuspend
+    libsuspend \
+    charger_res_images
 
 # Dumpstate
 PRODUCT_PACKAGES += \
