@@ -80,8 +80,8 @@ persist.log.tag.b/223498680=S
 persist.log.tag.TrafficStats=S
 persist.log.tag.ContrastColorUtil=S
 
-# LMK props
-ro.lmk.use_minfree_levels=true
+# LMK
+ro.config.low_ram=false
 
 # Open the first-in-first-out interface thread
 sys.use_fifo_ui=1
