@@ -346,4 +346,7 @@
 
     <!-- Determines whether the shell features all run on another thread. -->
     <bool name="config_enableShellMainThread">true</bool>
+    
+    <!-- See AmbientSensor.AmbientColorTemperatureSensor. The ambient color temperature sensor name. -->
+    <string name="config_displayWhiteBalanceColorTemperatureSensorName">com.google.sensor.color</string>
 </resources>
