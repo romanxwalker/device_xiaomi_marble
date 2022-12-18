@@ -187,6 +187,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
     libdrm.vendor
 
+# Charger
+PRODUCT_PACKAGES += \
+    libsuspend
+
 # Dumpstate
 PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.1.vendor
