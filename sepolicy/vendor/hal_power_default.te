@@ -1,3 +1,5 @@
 type vendor_touchfeature_device, dev_type;
 
 allow hal_power_default vendor_touchfeature_device:chr_file rw_file_perms;
+
+binder_call(hal_power_default, hal_graphics_composer_default);
