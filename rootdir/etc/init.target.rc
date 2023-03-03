@@ -242,10 +242,6 @@ on boot
     #USB controller configuration
     setprop vendor.usb.controller a600000.dwc3
 
-    #chown/chmod input_suspend node
-    chown system system /sys/class/qcom-battery/input_suspend
-    chmod 774 /sys/class/qcom-battery/input_suspend
-
     # default country code
     setprop ro.boot.wificountrycode 00
 
