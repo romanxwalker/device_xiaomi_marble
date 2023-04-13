@@ -312,19 +312,6 @@ on post-fs-data
     # Create the directory used by qrtr-lookup
     mkdir /data/vendor/qrtr 0775 system system
 
-service nqnfcinfo /system/vendor/bin/nqnfcinfo
-    class late_start
-    group nfc
-    user system
-    oneshot
-
-service iop /system/vendor/bin/iop
-    class main
-    user root
-    group root
-    disabled
-    socket iop seqpacket 0666 root system
-
 service vendor.ssr_setup /system/vendor/bin/ssr_setup
     oneshot
     disabled
