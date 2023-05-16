@@ -94,8 +94,8 @@ echo 0 > /proc/sys/kernel/sched_util_clamp_min_rt_default
 
 # configure governor settings for silver cluster
 echo "walt" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-echo 0 > /sys/devices/system/cpu/cpufreq/policy0/walt/down_rate_limit_us
-echo 0 > /sys/devices/system/cpu/cpufreq/policy0/walt/up_rate_limit_us
+echo 10000 > /sys/devices/system/cpu/cpufreq/policy0/walt/down_rate_limit_us
+echo 500 > /sys/devices/system/cpu/cpufreq/policy0/walt/up_rate_limit_us
 if [ $rev == "1.0" ]; then
 	echo 1190400 > /sys/devices/system/cpu/cpufreq/policy0/walt/hispeed_freq
 else
@@ -106,8 +106,8 @@ echo 1 > /sys/devices/system/cpu/cpufreq/policy0/walt/pl
 
 # configure governor settings for gold cluster
 echo "walt" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/down_rate_limit_us
-echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/up_rate_limit_us
+echo 15000 > /sys/devices/system/cpu/cpufreq/policy4/walt/down_rate_limit_us
+echo 500 > /sys/devices/system/cpu/cpufreq/policy4/walt/up_rate_limit_us
 if [ $rev == "1.0" ]; then
 	echo 1497600 > /sys/devices/system/cpu/cpufreq/policy4/walt/hispeed_freq
 else
