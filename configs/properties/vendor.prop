@@ -199,6 +199,13 @@ ro.hardware.camera=xiaomi
 persist.sys.miui.camera.version=2.7
 persist.sys.miui.camera.boost.killAdj_threshold=100
 
+# Dex2oat
+dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.image-dex2oat-threads=8
+dalvik.vm.dex2oat-filter=speed
+dalvik.vm.dex2oat-threads=8
+
 # Display
 vendor.display.disable_hw_recovery_dump=1
 vendor.display.enable_early_wakeup=1
