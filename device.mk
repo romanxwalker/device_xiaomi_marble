@@ -136,6 +136,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
+# Camera Legacy HIDL deps
+PRODUCT_PACKAGES += \
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0.vendor \
+    android.hidl.memory.block@1.0 \
+    android.hidl.memory.block@1.0.vendor \
+    android.hidl.memory@1.0-impl
+
 # Capabilityconfigstore
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
