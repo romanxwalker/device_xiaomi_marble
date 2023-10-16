@@ -174,6 +174,9 @@ function blob_fixup() {
     vendor/lib/libcodec2_vndk.stock.so)
         "${PATCHELF}" --set-soname "libcodec2_vndk.stock.so" "${2}"
         ;;
+    vendor/bin/hw/android.hardware.security.keymint-service-qti | vendor/lib64/libqtikeymint.so)
+            "${PATCHELF}" --add-needed "android.hardware.security.rkp-V1-ndk_platform.so" "${2}"
+        ;;
     esac
 }
 
