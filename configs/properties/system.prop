@@ -8,6 +8,13 @@ persist.vendor.bt.a2dp.hal.implementation=true
 persist.vendor.bt.a2dp.aac_whitelist=false
 persist.vendor.btstack.enable.lpa=true
 
+# Battery Saving
+ro.vendor.use_data_netmgrd=true 
+ro.vold.umsdirtyratio=20 
+ro.ril.disable.power.collapse=0 
+power.saving.mode=1
+pm.sleep_mode=1
+
 # Charger
 ro.charger.enable_suspend=1
 
