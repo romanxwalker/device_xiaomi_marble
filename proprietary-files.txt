@@ -1728,7 +1728,6 @@ vendor/lib/libdisplayqos.so
 vendor/lib/libdisplayskuutils.so
 vendor/lib/libqseed3.so
 vendor/lib/librcmask.so
-vendor/lib/libsdedrm.so
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-colormgr-algo.so
 vendor/lib/libsdm-disp-vndapis.so
@@ -1739,7 +1738,6 @@ vendor/lib64/libdisplayqos.so
 vendor/lib64/libdisplayskuutils.so
 vendor/lib64/libqseed3.so
 vendor/lib64/librcmask.so
-vendor/lib64/libsdedrm.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-colormgr-algo.so
 vendor/lib64/libsdm-disp-vndapis.so
@@ -1799,6 +1797,10 @@ vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libdolbyvision.so
 vendor/lib/libcodec2_hidl@1.0.so:vendor/lib/libcodec2_hidl@1.0.stock.so
 vendor/lib/libcodec2_vndk.so:vendor/lib/libcodec2_vndk.stock.so
+
+# Display (SDM) - from Pong qssi-user 14 UP1A.231005.007 2310072102 release-keys
+vendor/lib/libsdedrm.so|932f321d4168e4fb91b449899ff1544710bf49c1
+vendor/lib64/libsdedrm.so|cb159b4ea1b98cf192e7ffb582d135b7f229579b
 
 # DPM
 system_ext/bin/dpmd
