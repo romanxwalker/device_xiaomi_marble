@@ -491,6 +491,7 @@ PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.kernel.post_boot-taro.sh \
     init.marble.rc \
+    init.marble.perf.rc \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
