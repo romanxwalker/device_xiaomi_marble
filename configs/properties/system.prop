@@ -44,10 +44,6 @@ ro.feas.enable=true
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
-# Hint Manager
-debug.hwui.use_hint_manager=true
-debug.hwui.target_cpu_time_percent=30
-
 # Improve global touch screen response
 debug.performance.tuning=1
 video.accelerate.hw=1
@@ -62,11 +58,6 @@ ro.min.pointer.dur=0
 
 # LMK
 ro.config.low_ram=false
-
-# Graphics
-debug.hwui.renderer=opengl
-renderthread.skia.reduceopstasksplitting=true 
-debug.renderengine.backend=skiaglthreaded
 
 # IMS
 persist.dbg.volte_avail_ovr=1
@@ -119,9 +110,6 @@ ro.hardware.wlan.chip=qca6490
 ro.hardware.wlan.dbs=2
 ro.hardware.wlan.mimo=1
 ro.hardware.wlan.vendor=qcom
-
-# Zygote
-persist.device_config.runtime_native.usap_pool_enabled=true
 
 # Xiaomi
 ro.miui.notch=1
