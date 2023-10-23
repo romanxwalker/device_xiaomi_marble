@@ -405,8 +405,8 @@ ro.vendor.se.chip.model=SN110T
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf-hal.ver=2.3
-ro.vendor.perf.scroll_opt.heavy_app=2
-vendor.power.pasr.enabled=false
+ro.vendor.perf.scroll_opt=true
+vendor.power.pasr.enabled=true
 vendor.pasr.activemode.enabled=false
 vendor.perf.framepacing.enable=1
 
