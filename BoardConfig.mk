@@ -206,6 +206,7 @@ TARGET_USERIMAGES_SPARSE_F2FS_DISABLED := true
 
 # Power
 TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
+TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/configs/properties/odm.prop
