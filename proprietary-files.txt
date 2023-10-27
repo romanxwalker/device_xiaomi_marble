@@ -1941,7 +1941,6 @@ vendor/lib64/hw/consumerir.qcom.so
 # Kernel
 vendor/bin/init.kernel.post_boot-cape.sh
 vendor/bin/init.kernel.post_boot-diwali.sh
-vendor/bin/init.kernel.post_boot.sh
 vendor/bin/init.qti.kernel.sh
 vendor/bin/vendor_modprobe.sh
 vendor/etc/init/hw/init.qti.kernel.rc
