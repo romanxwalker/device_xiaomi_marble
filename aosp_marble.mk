@@ -40,5 +40,5 @@ WITH_GAPPS := true
 WITH_GAPPS := true
 
 # PixelStar Maintainer Flags
-PIXELSTAR_MAINTAINER := SMGReborn x Mauls
+PIXELSTAR_MAINTAINER := SMGRebornXmauls
 CUSTOM_BUILD_TYPE := UNOFFICIAL
