@@ -223,9 +223,6 @@ vendor/lib64/libxlog_vendor.so
 vendor/lib/soundfx/libqcbassboost.so|75266de6e9d0eeca3cc40451e144889f21e733f9
 vendor/lib/soundfx/libqcreverb.so|74ab2e295efc544d078378c6f73280d454901707
 vendor/lib/soundfx/libqcvirt.so|2d4f333804fb8a9b2b2d748473f9c531accbb399
-vendor/lib64/soundfx/libqcbassboost.so|708756550c0fbf42c0e96fba2f82588d69d26624
-vendor/lib64/soundfx/libqcreverb.so|b05c0ce2831aeb777a4b498408b32c63d81e797a
-vendor/lib64/soundfx/libqcvirt.so|69a2e48c588a3cc388cec47033c629858b64b470
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libaudiopreprocessing.so
 vendor/lib64/soundfx/libbundlewrapper.so
@@ -235,9 +232,12 @@ vendor/lib64/soundfx/libeffectproxy.so
 vendor/lib64/soundfx/libhapticgenerator.so
 vendor/lib64/soundfx/libldnhncr.so
 vendor/lib64/soundfx/libmisoundfx.so
+vendor/lib64/soundfx/libqcbassboost.so|708756550c0fbf42c0e96fba2f82588d69d26624
 vendor/lib64/soundfx/libqcompostprocbundle.so
 vendor/lib64/soundfx/libqcomvisualizer.so
 vendor/lib64/soundfx/libqcomvoiceprocessing.so
+vendor/lib64/soundfx/libqcreverb.so|b05c0ce2831aeb777a4b498408b32c63d81e797a
+vendor/lib64/soundfx/libqcvirt.so|69a2e48c588a3cc388cec47033c629858b64b470
 vendor/lib64/soundfx/libreverbwrapper.so
 vendor/lib64/soundfx/libshoebox.so
 vendor/lib64/soundfx/libswdap.so
@@ -1553,10 +1553,6 @@ vendor/lib64/c2.dolby.store.so
 vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libdolbyvision.so
 
-# Display (SDM) - from Pong qssi-user 14 UP1A.231005.007 2310072102 release-keys
-vendor/lib/libsdedrm.so|932f321d4168e4fb91b449899ff1544710bf49c1
-vendor/lib64/libsdedrm.so|cb159b4ea1b98cf192e7ffb582d135b7f229579b
-
 # DPM
 system_ext/bin/dpmd
 system_ext/bin/tcmd
@@ -2390,6 +2386,14 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml
 vendor/lib/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
 vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
 
+# QTI VNDK Framework Detect
+vendor/lib/libqti_vndfwk_detect_vendor.so
+vendor/lib/libvndfwk_detect_jni.qti.so
+vendor/lib/libvndfwk_detect_jni.qti_vendor.so
+vendor/lib64/libqti_vndfwk_detect_vendor.so
+vendor/lib64/libvndfwk_detect_jni.qti.so
+vendor/lib64/libvndfwk_detect_jni.qti_vendor.so
+
 # QVR
 vendor/bin/hw/qvrservice
 vendor/bin/qvrdatalogger
@@ -2811,6 +2815,10 @@ vendor/lib64/vendor.qti.ims.rcsuce@1.2.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
 
+# RIL - from V14.0.19.0.TMRCNXM
+system_ext/app/QtiTelephony/QtiTelephony.apk|e39418c08672181741835c03bea3009ead2e76d1
+system_ext/priv-app/Ims/Ims.apk|78b3c10d7071ff0afd9a86910222d1940f05f7a8
+
 # Secure element
 vendor/bin/hw/vendor.qti.secure_element@1.2-service
 vendor/etc/init/vendor.qti.secure_element@1.2-service.rc
@@ -2944,13 +2952,6 @@ vendor/etc/seccomp_policy/sxr@2.0.policy
 vendor/lib64/libsxrcryptoimpl.so
 vendor/lib64/libsxrservice.so
 
-# Thermal (limits-hal)
-vendor/bin/hw/vendor.qti.hardware.limits@1.1-service
-vendor/etc/init/vendor.qti.hardware.limits-service.rc
-vendor/etc/vintf/manifest/vendor.qti.hardware.limits-service.xml
-vendor/lib64/vendor.qti.hardware.limits@1.0.so
-vendor/lib64/vendor.qti.hardware.limits@1.1.so
-
 # Thermal
 vendor/lib/libthermalclient.so
 vendor/lib64/libthermalclient.so
@@ -2990,6 +2991,13 @@ vendor/bin/mi_thermald
 vendor/bin/thermal-engine-v2
 vendor/etc/init/hw/init.mi_thermald.rc
 vendor/etc/init/init_thermal-engine-v2.rc
+
+# Thermal (limits-hal)
+vendor/bin/hw/vendor.qti.hardware.limits@1.1-service
+vendor/etc/init/vendor.qti.hardware.limits-service.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.limits-service.xml
+vendor/lib64/vendor.qti.hardware.limits@1.0.so
+vendor/lib64/vendor.qti.hardware.limits@1.1.so
 
 # Thermal Service Client
 system_ext/lib/libthermalclient.qti.so
@@ -3304,14 +3312,6 @@ vendor/firmware/vpu20_4v.b18
 vendor/firmware/vpu20_4v.b19
 vendor/firmware/vpu20_4v.mbn
 vendor/firmware/vpu20_4v.mdt
-
-# QTI VNDK Framework Detect
-vendor/lib/libvndfwk_detect_jni.qti.so
-vendor/lib/libvndfwk_detect_jni.qti_vendor.so
-vendor/lib/libqti_vndfwk_detect_vendor.so
-vendor/lib64/libqti_vndfwk_detect_vendor.so
-vendor/lib64/libvndfwk_detect_jni.qti.so
-vendor/lib64/libvndfwk_detect_jni.qti_vendor.so
 
 # Widevine DRM
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
