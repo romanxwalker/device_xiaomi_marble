@@ -677,4 +677,8 @@
 
     <!-- True if the device supports Sustained Performance Mode. -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
+
+    <!-- The default minimum refresh rate for a given device. Devices with higher refresh rates
+         may want to configure this to avoid jank during refresh rate switching -->
+    <integer name="config_defaultMinimumRefreshRate">60</integer>
 </resources>
