@@ -24,4 +24,7 @@
          corner edges), this pulls out just the curve.
     -->
     <string name="config_rounded_mask" translatable="false">M8,0C3.6,0,0,3.6,0,8</string>
+
+    <!-- The CPU temperature divider, if needed -->
+    <integer name="config_cpuTempDivider" translatable="false">1000</integer>
 </resources>
