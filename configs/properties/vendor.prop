@@ -194,6 +194,7 @@ persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 persist.vendor.qcom.bluetooth.a2dp_mcast_test.enabled=false
 persist.vendor.qcom.bluetooth.scram.enabled=false
 persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
+persist.vendor.btstack.enable.lpa=true
 ro.vendor.bluetooth.csip_qti=true
 
 # Camera
