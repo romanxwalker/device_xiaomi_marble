@@ -661,4 +661,10 @@
     <!-- The default minimum refresh rate for a given device. Devices with higher refresh rates
          may want to configure this to avoid jank during refresh rate switching -->
     <integer name="config_defaultMinimumRefreshRate">60</integer>
+
+    <!-- Should the pinner service pin the Camera application? -->
+    <bool name="config_pinnerCameraApp">false</bool>
+
+    <!-- Should the pinner service pin the Home application? -->
+    <bool name="config_pinnerHomeApp">false</bool>
 </resources>
