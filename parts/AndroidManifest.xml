@@ -34,7 +34,7 @@
 
     <uses-sdk
         android:minSdkVersion="30"
-        android:targetSdkVersion="33"/>
+        android:targetSdkVersion="34"/>
 
     <application
         android:allowBackup="true"
@@ -53,7 +53,7 @@
             </intent-filter>
         </receiver>
 
-        <!--activity
+        <activity
             android:name=".dirac.DiracActivity"
             android:label="@string/dirac_title"
             android:exported="true">
@@ -90,7 +90,7 @@
         <provider
             android:name=".SummaryProvider"
             android:authorities="org.lineageos.settings.device.summary">
-        </provider-->
+        </provider>
 
         <service
             android:name=".doze.DozeService"
