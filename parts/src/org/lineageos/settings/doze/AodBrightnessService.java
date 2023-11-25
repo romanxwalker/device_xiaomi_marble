@@ -49,8 +49,8 @@ public class AodBrightnessService extends Service {
 
     private SensorManager mSensorManager;
     private Sensor mAodSensor;
-    private boolean mIsDozeHbm;
-    private final Handler mHandler = new Handler();
+    private boolean mIsDozing, mIsDozeHbm;
+    private int mDisplayState = Display.STATE_ON;
 
     private final SensorEventListener mSensorListener = new SensorEventListener() {
         @Override
@@ -73,24 +73,31 @@ public class AodBrightnessService extends Service {
     private final BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            dlog("onReceive: " + intent.getAction());
             switch (intent.getAction()) {
                 case Intent.ACTION_SCREEN_ON:
-                    dlog("Received ACTION_SCREEN_ON");
-                    mHandler.removeCallbacksAndMessages(null);
-                    mSensorManager.unregisterListener(mSensorListener, mAodSensor);
+                    if (mIsDozing) {
+                        mIsDozing = false;
+                        updateDozeBrightness();
+                        mSensorManager.unregisterListener(mSensorListener, mAodSensor);
+                    }
                     break;
                 case Intent.ACTION_SCREEN_OFF:
-                    dlog("Received ACTION_SCREEN_OFF");
                     if (Settings.Secure.getInt(getContentResolver(),
                             Settings.Secure.DOZE_ALWAYS_ON, 0) == 0) {
                         dlog("AOD is disabled by setting.");
                         break;
                     }
-                    FileUtils.writeLine(DOZE_BRIGHTNESS_NODE, DOZE_BRIGHTNESS_DISABLE);
-                    setInitialDozeHbmState();
-                    mSensorManager.registerListener(mSensorListener,
-                            mAodSensor, SensorManager.SENSOR_DELAY_NORMAL);
-                    mHandler.postDelayed(mScreenOffRunnable, SCREEN_OFF_WAIT_MS);
+                    if (!mIsDozing) {
+                        mIsDozing = true;
+                        setInitialDozeHbmState();
+                        mSensorManager.registerListener(mSensorListener,
+                                mAodSensor, SensorManager.SENSOR_DELAY_NORMAL);
+                    }
+                    break;
+                case Intent.ACTION_DISPLAY_STATE_CHANGED:
+                    mDisplayState = getDisplay().getState();
+                    updateDozeBrightness();
                     break;
             }
         }
@@ -125,7 +132,7 @@ public class AodBrightnessService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         dlog("Starting service");
-        IntentFilter screenStateFilter = new IntentFilter();
+        IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_DISPLAY_STATE_CHANGED);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         registerReceiver(mScreenStateReceiver, screenStateFilter);
@@ -153,12 +160,17 @@ public class AodBrightnessService extends Service {
         dlog("setInitialDozeHbmState: brightness=" + brightness + " mIsDozeHbm=" + mIsDozeHbm);
     }
 
-    private void writeDozeParam() {
-        final String dispParam = mIsDozeHbm ? DISP_PARAM_DOZE_HBM : DISP_PARAM_DOZE_LBM;
-        Log.i(TAG, "Enabling doze " + (mIsDozeHbm ? "HBM" : "LBM"));
-        dlog("Writing \"" + dispParam + "\" to disp_param node");
-        if (!FileUtils.writeLine(DISP_PARAM_NODE, dispParam)) {
-            Log.e(TAG, "Failed to write \"" + dispParam + "\" to disp_param node!");
+    private void updateDozeBrightness() {
+        dlog("updateDozeBrightness: mIsDozing=" + mIsDozing + " mDisplayState=" + mDisplayState
+                + " mIsDozeHbm=" + mIsDozeHbm);
+        final boolean isDozeState = mIsDozing && (mDisplayState == Display.STATE_DOZE
+                || mDisplayState == Display.STATE_DOZE_SUSPEND);
+        final int mode = !isDozeState ? 0 : (mIsDozeHbm ? 1 : 2);
+        try {
+            DfWrapper.setDisplayFeature(
+                    new DfWrapper.DfParams(/*DOZE_BRIGHTNESS_STATE*/ 25, mode, 0));
+        } catch (Exception e) {
+            Log.e(TAG, "updateDozeBrightness failed!", e);
         }
     }
 
