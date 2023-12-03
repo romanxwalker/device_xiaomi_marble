@@ -432,6 +432,9 @@ ro.soc.manufacturer=QTI
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
+# Telephony
+ro.telephony.handle_audio_direction_changes_between_call_state_changes=false
+
 # USB
 persist.sys.usb.config=none
 vendor.usb.use_gadget_hal=0
