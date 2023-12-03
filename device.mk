@@ -337,7 +337,7 @@ PRODUCT_PACKAGES += \
     android.hardware.security.keymint-V1-ndk.vendor \
     android.hardware.security.secureclock-V1-ndk.vendor \
     android.hardware.security.sharedsecret-V1-ndk.vendor \
-    android.hardware.security.rkp-V1-ndk.vendor
+    android.hardware.security.rkp-V3-ndk.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
