@@ -450,6 +450,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     AospWifiResOverlayMarble \
     ApertureOverlayMarble \
+    AvoidAppsInCutoutOverlay \
     CarrierConfigResMarble \
     FrameworksResCommon \
     FrameworksResOverlayMarble \
