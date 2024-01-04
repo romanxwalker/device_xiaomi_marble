@@ -8,6 +8,13 @@ vendor/etc/acdbdata/nn_ns_models/fai__2.7.20_0.0__3.0.0_0.0__eai_1.36_enpu2.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__2.7.2_0.0__3.0.0_0.0__eai_1.36_enpu2.pmd
 vendor/etc/acdbdata/nn_vad_models/fai__3.0.0_0.0__eai_1.36_enpu2.pmd
 
+# Audio FX - OzoAudio
+system_ext/lib/soundfx/libozoprocessing.so:vendor/lib/soundfx/libozoprocessing.so
+system_ext/lib/libav_ozodecoder.so:vendor/lib/libav_ozodecoder.so
+system_ext/lib/libav_ozoencoder.so:vendor/lib/libav_ozoencoder.so
+system_ext/lib/libozoaudio.so:vendor/lib/libozoaudio.so
+system_ext/lib/libozowidening.so:vendor/lib/libozowidening.so
+
 # ADSP
 vendor/bin/adsprpcd
 vendor/bin/audioadsprpcd
