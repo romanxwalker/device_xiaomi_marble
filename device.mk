@@ -448,15 +448,15 @@ PRODUCT_PACKAGES += \
     WifiResTarget_cape
 
 PRODUCT_PACKAGES += \
-    AospWifiResOverlayMarbleChina \
-    AospWifiResOverlayMarbleGlobal \
-    AospWifiResOverlayMarbleIndia \
-    SettingsOverlayGlobal \
-    SettingsOverlayChina \
-    SettingsOverlayIndia \
-    SettingsProviderOverlayChina \
-    SettingsProviderOverlayGlobal \
-    SettingsProviderOverlayIndia
+    MarbleCNSettingsOverlay \
+    MarbleCNSettingsProviderOverlay \
+    MarbleCNWifiOverlay \
+    MarbleGLSettingsOverlay \
+    MarbleGLSettingsProviderOverlay \
+    MarbleGLWifiOverlay \
+    MarbleINSettingsOverlay \
+    MarbleINSettingsProviderOverlay \
+    MarbleINWifiOverlay
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
