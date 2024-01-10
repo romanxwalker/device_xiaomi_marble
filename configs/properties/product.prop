@@ -4,9 +4,10 @@ audio.sys.routing.latency=0
 audio.offload.min.duration.secs=30
 media.stagefright.audio.deep=false
 
-# Blur
-ro.sf.blurs_are_expensive=1
-ro.surface_flinger.supports_background_blur=1
+# Blurs
+persist.sys.sf.disable_blurs=0
+ro.sf.blurs_are_expensive=0
+ro.surface_flinger.supports_background_blur=0
 
 # Radio
 persist.vendor.radio.hidl_dev_service=true
