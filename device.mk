@@ -428,6 +428,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AospWifiResOverlayMarble \
     ApertureOverlayMarble \
+    BluetoothResMarble \
     CarrierConfigResMarble \
     FrameworksResCommon \
     FrameworksResOverlayMarble \
