@@ -2269,6 +2269,7 @@ system_ext/lib64/vendor.qti.qspmhal@1.0.so|d6a85a1a67b26ef6147f14e1a1a8100d21eea
 system_ext/lib64/vendor.qti.qspmhal-V1-ndk.so|b59800aaae7bcae40ee0911516397568d205bc5f
 system/etc/permissions/com.qualcomm.qti.Performance.xml|7976f2fd46b8d07814310cc957a70f829bdd6932
 system/etc/permissions/com.qualcomm.qti.UxPerformance.xml|d92749d80c5d956db8251b08ea6388d3f107a32c
+system/lib/vendor.qti.hardware.perf2-V1-ndk.so
 system/lib64/vendor.qti.hardware.perf2-V1-ndk.so|d85286acecee8e2081ac066dc767421ffe648d29
 system/framework/QXPerformance.jar|59974549e5444f9b19561fd4307a57938ab696ed
 system/framework/QPerformance.jar|3d7ca2740a8f33e174a15405b335b5757a762a09
