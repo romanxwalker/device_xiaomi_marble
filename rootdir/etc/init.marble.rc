@@ -13,6 +13,9 @@ on boot
     chown system system /dev/xiaomi-touch
     chmod 0660 /dev/xiaomi-touch
 
+    # Disable doze brightness handling
+    write /sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/doze_brightness -1
+
     # Modem
     chmod 0777 /dev/smd8
     chown radio radio /dev/smd8

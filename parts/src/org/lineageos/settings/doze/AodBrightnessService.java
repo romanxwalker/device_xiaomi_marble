@@ -22,7 +22,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.Display;
 
-import org.lineageos.settings.utils.FileUtils;
+import org.lineageos.settings.display.DfWrapper;
 
 public class AodBrightnessService extends Service {
 
@@ -34,17 +34,6 @@ public class AodBrightnessService extends Service {
     private static final float AOD_SENSOR_EVENT_DIM = 5f;
     private static final float AOD_SENSOR_EVENT_DARK = 3f;
 
-    private static final String DOZE_BRIGHTNESS_NODE
-            = "/sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/doze_brightness";
-    private static final String DOZE_BRIGHTNESS_ENABLE = "0";
-    private static final String DOZE_BRIGHTNESS_DISABLE = "-1";
-
-    private static final String DISP_PARAM_NODE
-            = "/sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/disp_param";
-    private static final String DISP_PARAM_DOZE_HBM = "03 01";
-    private static final String DISP_PARAM_DOZE_LBM = "03 02";
-
-    private static final long SCREEN_OFF_WAIT_MS = 5000L;
     private static final int DOZE_HBM_BRIGHTNESS_THRESHOLD = 20;
 
     private SensorManager mSensorManager;
@@ -61,13 +50,8 @@ public class AodBrightnessService extends Service {
         public void onSensorChanged(SensorEvent event) {
             final float value = event.values[0];
             mIsDozeHbm = (value == AOD_SENSOR_EVENT_BRIGHT);
-            dlog("onSensorChanged: type=" + event.sensor.getType() + " value=" + value
-                    + " mIsDozeHbm=" + mIsDozeHbm);
-            if (!mHandler.hasCallbacks(mScreenOffRunnable)) {
-                writeDozeParam();
-            } else {
-                dlog("mScreenOffRunnable pending, skip writeDozeParam");
-            }
+            dlog("onSensorChanged: type=" + event.sensor.getType() + " value=" + value);
+            updateDozeBrightness();
         }
     };
 
@@ -108,19 +92,6 @@ public class AodBrightnessService extends Service {
         }
     };
 
-    private final Runnable mScreenOffRunnable = () -> {
-        final int displayState = getDisplay().getState();
-        dlog("displayState=" + displayState);
-        if (displayState == Display.STATE_DOZE
-                || displayState == Display.STATE_DOZE_SUSPEND) {
-            Log.i(TAG, "We are dozing, let's do our thing.");
-            writeDozeParam();
-        } else {
-            Log.i(TAG, "Not dozing, unregister AOD sensor.");
-            mSensorManager.unregisterListener(mSensorListener, mAodSensor);
-        }
-    };
-
     public static void startService(Context context) {
          context.startServiceAsUser(new Intent(context, AodBrightnessService.class),
                 UserHandle.CURRENT);
@@ -150,7 +121,6 @@ public class AodBrightnessService extends Service {
         dlog("Destroying service");
         unregisterReceiver(mScreenStateReceiver);
         mSensorManager.unregisterListener(mSensorListener, mAodSensor);
-        mHandler.removeCallbacksAndMessages(null);
         super.onDestroy();
     }
 

@@ -102,7 +102,6 @@ public class ThermalService extends Service {
                 if (focusedTask != null && focusedTask.topActivity != null) {
                     ComponentName taskComponentName = focusedTask.topActivity;
                     String foregroundApp = taskComponentName.getPackageName();
-                    if (DEBUG) Log.d(TAG, "onTaskStackChanged: foregroundApp=" + foregroundApp);
                     if (!foregroundApp.equals(mCurrentApp)) {
                         mCurrentApp = foregroundApp;
                         setThermalProfile();

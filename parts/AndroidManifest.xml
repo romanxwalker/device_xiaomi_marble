@@ -33,10 +33,6 @@
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
-    <uses-sdk
-        android:minSdkVersion="30"
-        android:targetSdkVersion="34"/>
-
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
@@ -78,6 +74,7 @@
             android:authorities="org.lineageos.settings.device.summary">
         </provider>
 
+        <!--
         <service
             android:name=".doze.DozeService"
             android:exported="true"
@@ -92,7 +89,8 @@
                 <action android:name="org.lineageos.settings.device.DOZE_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
+        </activity> 
+        -->
 
         <activity
             android:name=".speaker.ClearSpeakerActivity" 
@@ -205,13 +203,13 @@
         </service>
 
         <service
-            android:name=".touch.TouchOrientationService"
-            android:permission="TouchOrientationService">
+            android:name=".touch.HighTouchPollingService"
+            android:permission="HighTouchPollingService">
         </service>
 
         <service
-            android:name=".touch.HighTouchPollingService"
-            android:permission="HighTouchPollingService">
+            android:name=".touch.TouchOrientationService"
+            android:permission="TouchOrientationService">
         </service>
 
     </application>

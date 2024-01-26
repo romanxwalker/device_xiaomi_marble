@@ -1,5 +1,6 @@
 //
 // Copyright (C) 2017-2020 The LineageOS Project
+//           (C) 2023 Paranoid Android
 //
 // SPDX-License-Identifier: Apache-2.0
 //
@@ -21,7 +22,7 @@ android_app {
     static_libs: [
         "androidx.core_core",
         "androidx.preference_preference",
-        "org.pixelexperience.settings.resources",
+        "org.lineageos.settings.resources",
         "vendor.xiaomi.hardware.displayfeature-V1.0-java",
         "vendor.xiaomi.hw.touchfeature-V1.0-java"
     ],

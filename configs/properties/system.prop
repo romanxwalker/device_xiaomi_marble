@@ -34,15 +34,15 @@ persist.debug.ftrace_events_disable=Yes
 # Disable Skia tracing by default
 debug.hwui.skia_atrace_enabled=false
 
+# Display
+hwui.disable_vsync=true
+hwui.render_dirty_regions=false
+
 # FEAS
 ro.feas.enable=true
 
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
-
-# Hint Manager
-debug.hwui.use_hint_manager=true
-debug.hwui.target_cpu_time_percent=30
 
 # Improve global touch screen response
 debug.performance.tuning=1
@@ -62,19 +62,10 @@ persist.vendor.ims.disableDebugLogs=1
 persist.vendor.ims.disableIMSLogs=1
 persist.vendor.ims.disableQXDMLogs=1
 
-# LMK properties
-ro.lmk.kill_heaviest_task=true
-ro.lmk.kill_timeout_ms=50
-ro.lmk.use_new_strategy=true
-ro.lmk.enable_watermark_check=true
-ro.lmk.enable_userspace_lmk=true
-ro.lmk.enhance_batch_kill=false
-ro.lmk.super_critical=701
-ro.lmk.filecache_min_kb=153600
-ro.lmk.stall_limit_critical=40
-ro.lmk.psi_scrit_complete_stall_ms=150
-ro.lmk.direct_reclaim_pressure=45
-ro.lmk.reclaim_scan_threshold=0
+# IMS
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
 
 # Logs
 persist.log.tag.AnalyticsService=S
@@ -88,6 +79,9 @@ persist.log.tag.wificond=S
 persist.log.tag.b/223498680=S
 persist.log.tag.TrafficStats=S
 persist.log.tag.ContrastColorUtil=S
+
+# LMK props
+ro.lmk.use_minfree_levels=true
 
 # Open the first-in-first-out interface thread
 sys.use_fifo_ui=1
@@ -113,9 +107,6 @@ persist.sys.radio.force_lte_ca=true
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
 
-# SurfaceFlinger
-ro.sf.skip_set_active_mode_when_off=1
-
 # SSR
 persist.vendor.ssr.enable_ramdumps=1
 
@@ -136,20 +127,11 @@ ro.hardware.wlan.dbs=2
 ro.hardware.wlan.mimo=1
 ro.hardware.wlan.vendor=qcom
 
-# Zygote
-persist.device_config.runtime_native.usap_pool_enabled=true
+# Video Calling
+persist.vendor.radio.report_codec=1 
+persist.vendor.radio.vdp_on_ims_cap=1
+persist.vendor.qti.telephony.vt_cam_interface=2
 
 # Xiaomi
 ro.miui.notch=1
 ro.product.mod_device=marble_global
-
-# Ram Management
-ro.config.fha_enable=true
-ro.sys.fw.bg_apps_limit=32
-ro.config.dha_cached_max=16
-ro.config.dha_empty_max=42
-ro.config.dha_empty_init=32
-ro.config.dha_lmk_scale=0.545
-ro.config.dha_th_rate=2.3
-ro.config.sdha_apps_bg_max=64
-ro.config.sdha_apps_bg_min=8

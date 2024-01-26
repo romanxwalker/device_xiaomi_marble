@@ -7,6 +7,7 @@
 package org.lineageos.settings.display;
 
 import static android.provider.Settings.System.DISPLAY_COLOR_MODE;
+import static org.lineageos.settings.display.DfWrapper.DfParams;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -140,53 +141,12 @@ public class ColorService extends Service {
         final DfParams params = COLOR_MAP.get(colorMode);
         dlog("setCurrentColorMode: " + colorMode + ", params=" + params);
         if (params.mode == EXPERT_MODE) {
-            setDisplayFeatureParams(EXPERT_PARAMS);
+            DfWrapper.setDisplayFeature(EXPERT_PARAMS);
         }
-        setDisplayFeatureParams(params);
-    }
-
-    private void setDisplayFeatureParams(DfParams params) {
-        final IDisplayFeature displayFeature = getDisplayFeature();
-        if (displayFeature == null) {
-            Log.e(TAG, "setDisplayFeatureParams: displayFeature is null!");
-            return;
-        }
-        dlog("setDisplayFeatureParams: " + params);
-        try {
-            displayFeature.setFeature(0, params.mode, params.value, params.cookie);
-        } catch (Exception e) {
-            Log.e(TAG, "setDisplayFeatureParams failed!", e);
-        }
-    }
-
-    private IDisplayFeature getDisplayFeature() {
-        if (mDisplayFeature == null) {
-            dlog("getDisplayFeature: mDisplayFeature=null");
-            try {
-                mDisplayFeature = IDisplayFeature.getService();
-            } catch (Exception e) {
-                Log.e(TAG, "getDisplayFeature failed!", e);
-            }
-        }
-        return mDisplayFeature;
+        DfWrapper.setDisplayFeature(params);
     }
 
     private static void dlog(String msg) {
         if (DEBUG) Log.d(TAG, msg);
-    }
-
-    private static class DfParams {
-        /* displayfeature parameters */
-        final int mode, value, cookie;
-
-        DfParams(int mode, int value, int cookie) {
-            this.mode = mode;
-            this.value = value;
-            this.cookie = cookie;
-        }
-
-        public String toString() {
-            return "DisplayFeatureParams(" + mode + ", " + value + ", " + cookie + ")";
-        }
     }
 }
