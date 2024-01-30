@@ -57,4 +57,7 @@
 
     <!-- Boost Framework -->
     <bool name="config_supportsBoostFramework">true</bool>
+
+    <!-- Whether device supports increased touch sensitvity -->
+    <bool name="config_supportGloveMode">true</bool>
 </resources>
