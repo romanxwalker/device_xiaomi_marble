@@ -26,6 +26,11 @@ persist.vendor.dpm.feature=11
 # Display
 persist.sys.brightness.low.gamma=true
 
+# IMS
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
 # Legit Touch Hax
 touch.size.scale=1
 touch.size.bias=0
