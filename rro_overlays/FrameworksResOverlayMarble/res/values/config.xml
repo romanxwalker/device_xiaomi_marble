@@ -684,4 +684,7 @@
 
     <!-- The default volume for the ring stream -->
     <integer name="config_audio_ring_vol_default">11</integer>
+
+    <!-- The max scale for the wallpaper when it's zoomed in -->
+    <item name="config_wallpaperMaxScale" format="float" type="dimen">1</item>
 </resources>
