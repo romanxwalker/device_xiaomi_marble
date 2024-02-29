@@ -303,7 +303,7 @@ persist.sys.sf.native_mode=2
 debug.cpurend.vsync=false
 debug.sf.hw=0
 debug.sdm.support_writeback=0
-debug.sf.latch_unsignaled=1
+debug.sf.latch_unsignaled=0
 debug.sf.auto_latch_unsignaled=0
 debug.sf.defer_refresh_rate_when_off=1
 debug.sf.disable_client_composition_cache=1
@@ -391,7 +391,6 @@ ro.vendor.perf-hal.ver=2.3
 vendor.perf.framepacing.enable=1
 vendor.power.pasr.enabled=false
 vendor.pasr.activemode.enabled=false
-vendor.perf.framepacing.enable=1
 
 # QFP
 persist.vendor.qfp=true

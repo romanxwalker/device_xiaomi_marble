@@ -17,6 +17,7 @@
 package org.lineageos.settings.thermal;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.widget.R;
@@ -24,6 +25,7 @@ import com.android.settingslib.widget.R;
 public class ThermalSettingsActivity extends CollapsingToolbarBaseActivity {
 
     private static final String TAG_THERMAL = "thermal";
+    private static final String THERMAL_SCONFIG = "/sys/class/thermal/thermal_message/sconfig";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
