@@ -762,4 +762,7 @@
 
      <!--Useful if you want to improve signal reception -->
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
+
+     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
+    <integer name="config_shutdownBatteryTemperature">580</integer>
 </resources>
