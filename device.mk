@@ -444,7 +444,8 @@ PRODUCT_PACKAGES += \
     TetheringResCommon \
     UpdatesResOverlayMarble \
     WifiResMarble \
-    WifiResTarget
+    WifiResTarget \
+    WifiResTarget_cape
 
 PRODUCT_PACKAGES += \
     AospWifiResOverlayMarbleChina \
