@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_marble.mk
+    $(LOCAL_DIR)/awaken_marble.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_marble-eng \
-    aosp_marble-userdebug \
-    aosp_marble-user
+    awaken_marble-eng \
+    awaken_marble-userdebug \
+    awaken_marble-user
