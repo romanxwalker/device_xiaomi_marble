@@ -776,10 +776,6 @@
          device's memory use without going to the point of causing applications to turn off features. -->
     <bool name="config_avoidGfxAccel">true</bool>
 
-     <!-- The type of the light sensor to be used by the display framework for things like
-         auto-brightness. If unset, then it just gets the default sensor of type TYPE_LIGHT. -->
-    <string name="config_displayLightSensorType" translatable="false">qti.sensor.wise_light</string>
-
      <!-- Indicate whether to allow the device to suspend when the screen is off due to the proximity sensor.  This resource should only be set to true
          if the sensor HAL correctly handles the proximity sensor as a wake-up source. Otherwise, the device may fail to wake out of suspend reliably. The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
