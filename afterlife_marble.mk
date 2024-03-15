@@ -37,8 +37,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 # Nuke AudioFX
 TARGET_EXCLUDES_AUDIOFX := true
 
-# GAPPS
-WITH_GAPPS := true
-
 # Maintainer
-AFTERLIFE_MAINTAINER := SMGReborn x Mauls
+AFTERLIFE_MAINTAINER := SMGxULS
