@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/evolution_marble.mk
+    $(LOCAL_DIR)/afterlife_marble.mk
 
 COMMON_LUNCH_CHOICES := \
-    evolution_marble-eng \
-    evolution_marble-userdebug \
-    evolution_marble-user
+    afterlife_marble-eng \
+    afterlife_marble-userdebug \
+    afterlife_marble-user
